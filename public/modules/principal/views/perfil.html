@@ -1,0 +1,74 @@
+<!-- /.row -->
+<div class="row" ng-controller="perfilController">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-user fa-fw"></i> Mi Perfil
+
+            </div>
+            <!-- /.panel-heading -->
+            <div class="panel-body">
+                <div id="morris-area-chart">
+
+
+
+                    <form id="formPerfil" name="formPerfil" class="form-horizontal" novalidate>
+
+
+
+                        <div class="form-group" ng-class="{'has-error': isInvalid('nombre'), 'has-success':isValid('nombre')}">         
+                            <label for="nombre" class="col-sm-2 control-label"> nombre</label>    
+                            <div class="col-sm-10">                                 
+                                <input type="text" class="form-control" alt="nombre" title="nombre" id="nombre" name="nombre" ng-model="nombre" placeholder="nombre" required>    
+                            </div>
+                        </div>
+                    
+                        <div class="form-group" ng-class="{'has-error': isInvalid('email'), 'has-success':isValid('email')}">                                
+                            <label for="email" class="col-sm-2 control-label">Email</label>                                
+                            <div class="col-sm-10">                                    
+                                <input type="email" class="form-control" alt="email" title="email" id="email" name="email" ng-model="email" placeholder="Email" required="">                                
+                            </div>
+                        </div>
+                        
+                        
+                        <div class="form-group" ng-class="{'has-error': isInvalid('rol_id'), 'has-success':isValid('rol_id')}">                                
+                            <label for="email" class="col-sm-2 control-label">Rol</label>                                
+                            <div class="col-sm-10">                                    
+                                <select type="email" class="form-control" alt="rol_id" title="rol_id" id="email" name="rol_id" ng-model="rol_id"  ng-options="item.nombre for item in rol_id">     
+                                    <option value="">Seleccione uno</option>    
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': isInvalid('password'), 'has-success':isValid('password')}">                                
+                            <label for="password" class="col-sm-2 control-label">Password</label>                                
+                            <div class="col-sm-10">                                    
+                                <input type="password" class="form-control" alt="password" title="password" id="password" name="password" ng-model="password" placeholder="Password">                                
+                            </div>
+                        </div>
+                        <div class="form-group" ng-class="{'has-error': isValidPassword(), 'has-success':isValid('password2')}">                                
+                            <label for="password2" class="col-sm-2 control-label">Confirmar Password</label>                                
+                            <div class="col-sm-10">                                    
+                                <input type="password" class="form-control" alt="password2" title="password2" id="password2" name="password2" ng-model="password2" placeholder="Confirmar Password">                                
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="col-sm-offset-2 col-sm-10">
+                                <button type="button" ng-click="submit()" ng-disabled="formPerfil.$invalid" class="btn btn-success">Actualizar</button>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+                </div>
+            </div>
+            <!-- /.panel-body -->
+        </div>
+        <!-- /.panel -->
+
+    </div>
+    <!-- /.col-lg-8 -->
+
+    <!-- /.col-lg-4 -->
+</div>
+<!-- /.row -->
