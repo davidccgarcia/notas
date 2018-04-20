@@ -1,34 +1,34 @@
 @extends('layouts.default')
 
-
 @section('content')
-    <div  id="contenView">
+<br>
+<div  id="contenView">
 
-        <!-- /.row -->
-        <div class="row">
-            <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <div class="panel panel-success">
-                    <div class="panel-heading">
-                        <i class="fa fa-home fa-fw"></i> Inicio
-                    </div>
-                    <!-- /.panel-heading -->
-                    <div class="panel-body">
-                        <div id="morris-area-chart">
-                            Bienvenido<br>
-                        </div>
-                    </div>
-                    <!-- /.panel-body -->
+    <!-- /.row -->
+    <div class="row">
+        <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
+            <div class="panel panel-success">
+                <div class="panel-heading">
+                    <i class="fa fa-home fa-fw"></i> Inicio
                 </div>
-                <!-- /.panel -->
-
+                <!-- /.panel-heading -->
+                <div class="panel-body">
+                    <div id="morris-area-chart">
+                        Bienvenido<br>
+                    </div>
+                </div>
+                <!-- /.panel-body -->
             </div>
-            <!-- /.col-lg-8 -->
+            <!-- /.panel -->
 
-            <!-- /.col-lg-4 -->
         </div>
-        <!-- /.row -->
+        <!-- /.col-lg-8 -->
 
+        <!-- /.col-lg-4 -->
     </div>
+    <!-- /.row -->
+
+</div>
 @stop
 
 @section('angularjs')

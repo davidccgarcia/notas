@@ -27,34 +27,34 @@ class ExamenFisicoController extends \BaseController {
         DB::connection('siis')->beginTransaction();
 
         try {
-                $usuario_id = $this->getUserFromSession()[0]->usuario_id;
+            $usuario_id = $this->getUserFromSession()[0]->usuario_id;
 
-                $data = Input::all();
+            $data = Input::all();
+
+            DB::connection('siis')
+                ->table('hc_revision_por_sistemas_hallazgos')
+                ->insert([
+                    [
+                        'evolucion_id'  => $data['evolucion_id'], 
+                        'ingreso'       => $data['ingreso'],
+                        'hallazgo'      => $data['hallazgo'], 
+                        'usuario_id'    => $usuario_id
+                    ]
+                ]);
+
+            foreach ($data['data'] as $input) {
 
                 DB::connection('siis')
-                    ->table('hc_revision_por_sistemas_hallazgos')
+                    ->table('hc_revision_por_sistemas')
                     ->insert([
                         [
-                            'evolucion_id'  => $data['evolucion_id'], 
-                            'ingreso'       => $data['ingreso'],
-                            'hallazgo'      => $data['hallazgo'], 
-                            'usuario_id'    => $usuario_id
+                            'tipo_sistema_id'   => $input['tipo_sistema'], 
+                            'evolucion_id'      => $data['evolucion_id'], 
+                            'ingreso'           => $data['ingreso'], 
+                            'sw_normal'         => $input['sw_normal']
                         ]
                     ]);
-
-                foreach ($data['data'] as $input) {
-
-                    DB::connection('siis')
-                        ->table('hc_revision_por_sistemas')
-                        ->insert([
-                            [
-                                'tipo_sistema_id'   => $input['tipo_sistema'], 
-                                'evolucion_id'      => $data['evolucion_id'], 
-                                'ingreso'           => $data['ingreso'], 
-                                'sw_normal'         => $input['sw_normal']
-                            ]
-                        ]);
-                }
+            }
 
         DB::connection('siis')->commit();
 
