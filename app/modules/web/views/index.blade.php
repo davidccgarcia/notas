@@ -7,18 +7,14 @@
         <!-- /.row -->
         <div class="row">
             <div class="col-sm-9 col-sm-offset-3 col-md-10 col-md-offset-2 main">
-                <div class="panel panel-primary">
+                <div class="panel panel-success">
                     <div class="panel-heading">
                         <i class="fa fa-home fa-fw"></i> Inicio
                     </div>
                     <!-- /.panel-heading -->
                     <div class="panel-body">
                         <div id="morris-area-chart">
-
-
                             Bienvenido<br>
-
-                           
                         </div>
                     </div>
                     <!-- /.panel-body -->

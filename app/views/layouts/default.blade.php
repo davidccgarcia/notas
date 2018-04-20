@@ -46,12 +46,12 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand white" href="/">Notas</a>
+              <a class="navbar-brand green" href="/">Notas</a>
             </div>
             <div id="navbar" class="navbar-collapse collapse">
               <ul class="nav navbar-nav navbar-right">
                 <li class="dropdown">
-                    <a class="dropdown-toggle white" data-toggle="dropdown" href="#">
+                    <a class="dropdown-toggle green" data-toggle="dropdown" href="#">
                         <i class="fa fa-user fa-fw"></i> 
                             {{ Auth::user()->nombre }}
                         <i class="fa fa-caret-down"></i>
@@ -79,9 +79,9 @@
         </nav>
         <div class="container-fluid">
           <div class="row">
-            <div class="col-sm-3 col-md-2 sidebar">
+            <div class="col-sm-3 col-md-2 sidebar custom-navbar-color">
               <ul class="nav nav-sidebar">
-                <li class="active">
+                <li>
                     <a href="{{ url('/') }}">
                         <i class="fa fa-home fa-fw"></i>
                         Inicio <span class="sr-only">(current)</span>
