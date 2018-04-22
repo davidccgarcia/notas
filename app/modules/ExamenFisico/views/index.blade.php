@@ -5,7 +5,7 @@
 @stop
 
 @section('content')
-<br>
+
 <div  id="contenView">
 
     <!-- /.row -->

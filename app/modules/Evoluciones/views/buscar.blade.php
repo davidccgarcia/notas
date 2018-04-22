@@ -1,25 +1,22 @@
 @extends('layouts.default')
 
+@section('title') Evoluciones @stop
 @section('content')
-<br>
 <div  id="contenView">
 
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+                <div class="card border-success">
+                    <div class="card-header bg-info text-white">
                     <i class="fa fa-heart fa-fw" ></i> Buscar Evolucion
-
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
-
-
                         <div class="row" >
                             <div class="col-md-12">
-                                <form class="form-horizontal" method="POST" action="{{route('evoluciones.buscar')}}">
+                                <form class="form-horizontal" method="POST" action="{{ route('evoluciones.buscar') }}">
                                     <div class="form-group">
                                         <label for="cuenta" class="col-sm-2 control-label">Cuenta</label>
                                         <div class="col-sm-10">
@@ -29,7 +26,6 @@
                                     <div class="form-group">
                                         <div class="col-sm-offset-2 col-sm-10">
                                             <button type="submit" class="btn btn-success"><i class="fa fa-search fa-fw"></i> BUSCAR</button>
-                                      
                                         </div>
                                     </div>
                                 </form>

@@ -1,60 +1,27 @@
-
-
 @extends('layouts.default')
 
-
-@section('title')
-    ProyectoX
-@stop
-
-@section('head')
-
-
-
-@stop
-
+@section('title') Inicio @stop
 
 @section('content')
-<div  id="contenView">
-
-    <!-- /.row -->
-    <div class="row">
-        <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-home fa-fw"></i> Inicio
-
-                </div>
-                <!-- /.panel-heading -->
-                <div class="panel-body">
-                    <div id="morris-area-chart">
-
-
-                        Bienvenido<br>
-
-                       
+    <div  id="contenView">
+        <!-- /.row -->
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="card border-success">
+                    <div class="card-header bg-info text-white">
+                        <i class="fa fa-home fa-fw"></i> Inicio
                     </div>
+                    <!-- /.panel-heading -->
+                    <div class="card-body">
+                        <div id="morris-area-chart">Bienvenido</div>
+                    </div>
+                    <!-- /.panel-body -->
                 </div>
-                <!-- /.panel-body -->
+                <!-- /.panel -->
             </div>
-            <!-- /.panel -->
-
+            <!-- /.col-lg-8 -->
+            <!-- /.col-lg-4 -->
         </div>
-        <!-- /.col-lg-8 -->
-
-        <!-- /.col-lg-4 -->
+        <!-- /.row -->
     </div>
-    <!-- /.row -->
-
-</div>
-
-
-
-@stop
-
-@section('angularjs')
-<!-- <script src="{{asset('/modules/menu/assets/js/modulo.js')}}"></script>
- <script src="{{asset('/modules/menu/assets/js/routes.js')}}" ></script>
- <script src="{{asset('/modules/menu/assets/js/controllers.js')}}" ></script>-->
-
 @stop
