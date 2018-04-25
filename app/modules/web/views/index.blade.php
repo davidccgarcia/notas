@@ -3,7 +3,7 @@
 @section('title') Inicio @stop
 
 @section('content')
-    <div  id="contenView">
+    <div id="contenView">
         <!-- /.row -->
         <div class="row">
             <div class="col-lg-12">

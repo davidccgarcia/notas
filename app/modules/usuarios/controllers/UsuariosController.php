@@ -2,11 +2,13 @@
 
 namespace App\Modules\Usuarios\Controllers;
 
-use View,
+use DB,
+    View,
     Input,
     App\Modules\Usuarios\Models\SystemUsuarios,
     Redirect,
-      Response,Request;
+    Response,
+    Request;
 
 class UsuariosController extends \BaseController {
 
@@ -18,6 +20,10 @@ class UsuariosController extends \BaseController {
      */
     public function index() {
         $usuarios = SystemUsuarios::name(Input::get('name'))->paginate();
+        $usuarios = DB::table('usuarios')
+            ->join('roles', 'usuarios.rol_id', '=', 'roles.id')
+            ->select('usuarios.id', 'usuarios.nombre', 'usuarios.usuario', 'roles.nombre as role')
+            ->paginate();
 
         return View::make('usuarios::usuarios.listUsuarios')->with('usuarios', $usuarios);
     }
@@ -67,8 +73,14 @@ class UsuariosController extends \BaseController {
      * @return Response
      */
     public function show($id) {
-        $usuario = SystemUsuarios::find($id);
-        return View::make('usuarios::usuarios.showUsuario')->with('usuario', $usuario);
+        $usuario = DB::table('usuarios')
+            ->where('usuarios.id', $id)
+            ->join('roles', 'usuarios.rol_id', '=', 'roles.id')
+            ->select('usuarios.nombre', 'usuarios.email', 'usuarios.usuario', 'roles.nombre as role')
+            ->first();
+            
+        return View::make('usuarios::usuarios.showUsuario')
+            ->with('usuario', $usuario);
     }
 
     /**

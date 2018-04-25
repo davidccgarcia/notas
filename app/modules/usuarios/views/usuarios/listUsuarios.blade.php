@@ -33,31 +33,25 @@
                                 <br><br>
                                 <hr>
                                 <div class="col-md-12">
-                                    <table class="table table-bordered">
+                                    <table class="table table-bordered text-center">
                                         <tr>
-
-                                            <th>Id</th>
-                                            <th>Usuario</th>
-                                            <th>Nombre</th>
-                                            <th>rol_id</th>
-                                            <!--<th>Avatar</th>-->
-                                            <th>Acciones</th>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Usuario</th>
+                                            <th scope="col">Nombre</th>
+                                            <th scope="col">Role</th>
+                                            <th scope="col">Acciones</th>
                                         </tr>
                                         @foreach ($usuarios as $usuario)
-
-                                        <tr>
-                                            <td>{{ $usuario->id }}</td>
-                                            <td>{{ $usuario->usuario }}</td>
-                                            <td>{{ $usuario->nombre }}</td>
-                                            <td>{{ $usuario->rol_id }}</td>
-                                            <!--<td>{{ $usuario->avatar }}</td>-->      
-                                            <td>
-                                                <a href="{{ route('usuarios.show',array( $usuario->id)) }}"><i class="fa fa-eye"></i></a>
-                                                <a href="{{ route('usuarios.edit',array( $usuario->id)) }}"><i class="fa fa-edit"></i></a>
-                                                <a href="#" data-id="{{ $usuario->id }}" class="btn-delete"><i class="fa fa-remove"></i></a>
-                                            </td>
-                                        </tr>    
-                                        
+                                            <tr>
+                                                <th scope="row">{{ $usuario->id }}</th>
+                                                <td>{{ $usuario->usuario }}</td>
+                                                <td>{{ $usuario->nombre }}</td>
+                                                <td>{{ $usuario->role }}</td>
+                                                <td>
+                                                    <a href="{{ route('usuarios.show',array( $usuario->id)) }}"><i class="fa fa-eye"></i></a>
+                                                    <a href="{{ route('usuarios.edit',array( $usuario->id)) }}"><i class="fa fa-edit"></i></a>
+                                                </td>
+                                            </tr>
                                         @endforeach
                                     </table>
 
