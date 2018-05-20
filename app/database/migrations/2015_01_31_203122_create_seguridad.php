@@ -22,6 +22,7 @@ class CreateSeguridad extends Migration {
             $table->increments('id');
             $table->integer('rol_id')->unsigned();
             $table->string('nombre', 50);
+            $table->string('usuario', 50);
             $table->string('email', 50);
             $table->string('avatar', 50)->nullable();
             $table->string('password', 100);
