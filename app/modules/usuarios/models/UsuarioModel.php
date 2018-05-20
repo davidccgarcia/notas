@@ -15,7 +15,7 @@ class UsuarioModel extends \Eloquent {
      */
     protected $table = 'usuarios';
     public $errors;
-    protected $fillable = array('password', 'nombre', 'email','avatar','rol_id','usuario');
+    protected $fillable = array('password', 'nombre', 'email','avatar','rol_id', 'usuario');
 
     public function isValid($data) {
         $rules = array(
