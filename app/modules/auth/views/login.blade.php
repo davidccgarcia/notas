@@ -16,14 +16,14 @@
         <div class="container-login100">
             <div class="wrap-login100 p-t-15 p-b-20">
                 {{ Form::open(['route' => 'login.post', 'class' => 'login100-form validate-form', 'role' => 'form']) }}
+                    <span class="login100-form-title p-b-40">
+                        Clínica Los Andes
+                    </span>
                     @if (Session::has('errors')) 
                         <div class="alert alert-danger">
                             {{ Session::get('errors') }}
                         </div>
                     @endif
-                    <span class="login100-form-title p-b-70">
-                        Clínica Los Andes
-                    </span>
                     <span class="login100-form-avatar">
                         <img src="{{ asset('images/los_andes.png') }}" alt="AVATAR">
                     </span>
