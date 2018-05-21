@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title') Motivo de Consulta @stop
+@section('title', 'Motivo de Consulta')
 
 @section('content')
 

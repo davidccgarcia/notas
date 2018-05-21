@@ -37,6 +37,7 @@ class EvolucionesController extends \BaseController {
         $cuenta = Input::get('cuenta');
         $ingreso = $this->getIngresoOfCuenta($cuenta);
         $cont = DB::connection('siis')->table('hc_evoluciones')->where('ingreso', '=', $ingreso)->count();
+        
         if($cont<1) {
           return  Redirect::to('evoluciones/buscar')->with('alert', 'No se puede acceder porque no tiene ningun registro en hc_evoluciones con el ingreso='.$ingreso);
         }

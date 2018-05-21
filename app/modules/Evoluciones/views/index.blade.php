@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', 'buscar')
+
 @section('content')
 <br>
 <div  id="contenView">
@@ -7,13 +9,13 @@
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card border-success">
+                <div class="card-header bg-info text-white">
                     <i class="fa fa-heart fa-fw" ></i> Evoluciones
 
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
 
@@ -23,7 +25,7 @@
                                     $cont = DB::connection('siis')->table('hc_evolucion_descripcion')->where('ingreso', '=', $ingreso)->count();
                                     if($cont>0){
                                 ?>
-                                <a href="{{url('evoluciones/create?ingreso='.$ingreso)}}" class="btn btn-success">Agregar nueva Evolucion</a>
+                                <a href="{{url('evoluciones/create?ingreso='.$ingreso)}}" class="btn btn-primary">Agregar nueva Evolucion</a>
 
                                 </br>
                                 <hr>

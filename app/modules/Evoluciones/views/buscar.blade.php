@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title') Evoluciones @stop
+@section('title', 'Evoluciones')
 @section('content')
 <div  id="contenView">
 
@@ -40,13 +40,8 @@
 
 </div>
 
-
-
-
 @stop
 
 @section('script')
-
-
 
 @stop

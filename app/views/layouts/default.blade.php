@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="es">
+<html ng-app="miApp" lang="es">
 
 <head>
   <meta charset="utf-8">
@@ -16,6 +16,8 @@
   <link href="{{ asset('main/datatables/dataTables.bootstrap4.css') }}" rel="stylesheet">
   <!-- Custom styles for this template-->
   <link href="{{ asset('css/sb-admin.css') }}" rel="stylesheet">
+  <script src="{{ asset('lib/jQuery/js/jquery.min.js') }}"></script>
+  @yield('head')
 </head>
 
 <body class="fixed-nav sticky-footer bg-dark" id="page-top">
@@ -118,7 +120,7 @@
       <i class="fa fa-angle-up"></i>
     </a> --}}
     <!-- Logout Modal-->
-    {{-- <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+    <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
       <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
@@ -134,9 +136,9 @@
           </div>
         </div>
       </div>
-    </div> --}}
+    </div>
 
-    {{-- <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true" >
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-body" ng-include="rutaModal">
@@ -145,25 +147,32 @@
 
             </div>
         </div>
-    </div> --}}
+    </div>
     <script>
         var base_url = "{{URL::to('/')}}";
     </script>
     <!-- Bootstrap core JavaScript-->
-    <script src="{{ asset('main/jquery/jquery.min.js') }}"></script>
     <script src="{{ asset('main/bootstrap/js/bootstrap.bundle.min.js') }}"></script>
-    <!-- Core plugin JavaScript-->
-    <script src="{{ asset('main/jquery-easing/jquery.easing.min.js') }}"></script>
-    <!-- Page level plugin JavaScript-->
-    <script src="{{ asset('main/chart.js/Chart.min.js') }}"></script>
     <script src="{{ asset('main/datatables/jquery.dataTables.js') }}"></script>
     <script src="{{ asset('main/datatables/dataTables.bootstrap4.js') }}"></script>
     <!-- Custom scripts for all pages-->
     <script src="{{ asset('js/sb-admin.min.js') }}"></script>
-    <!-- Custom scripts for this page-->
-    <script src="{{ asset('js/sb-admin-datatables.min.js') }}"></script>
-    <script src="{{ asset('js/sb-admin-charts.min.js') }}"></script>
+
+    <!-- Angular js -->
+    <script src="{{ asset('lib/angularjs/angular.js') }}"></script>
+    <script src="{{ asset('modules/principal/assets/js/modulo.js') }}"></script>
+    <script src="{{ asset('modules/principal/assets/js/controllers.js') }}"></script>
+    <script src="{{ asset('modules/principal/assets/js/main.js') }}"></script>
+    <script src="{{ asset('modules/principal/assets/js/mainII.js') }}"></script>
   </div>
+
+  <script>
+    $(document).on('submit', '.delete-form', function () {
+      return confirm('¿Está seguro que desea remover este registro?');
+    });
+  </script>
+  @yield('angularjs')
+  @yield('scripts')
 </body>
 
 </html>
