@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', 'Motivo de consulta')
+
 @section('content')
 <br>
 <div  id="contenView">
@@ -7,13 +9,13 @@
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card border-success">
+                <div class="card-header bg-info text-white">
                     <i class="fa fa-file fa-fw" ></i> Motivo de Consulta
 
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
 

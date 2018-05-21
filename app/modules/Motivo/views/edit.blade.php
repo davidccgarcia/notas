@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', 'Motivo de Consulta - Editar')
+
 @section('content')
 <br>
 <div  id="contenView">
@@ -7,13 +9,13 @@
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card border-success">
+                <div class="card-header bg-info text-white">
                     <i class="fa fa-file fa-fw"></i> Editar Motivo de Consulta
 
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
 
@@ -26,21 +28,21 @@
                                 <input type="hidden" class="form-control" value="{{$evolucion->ingreso}}" name="ingreso" id="ingreso" >
 
                                 <div class="form-group">
-                                    {{ Form::label('descripcion', 'descripcion',array('class'=>'col-sm-2 control-label')) }}
+                                    {{ Form::label('descripcion', 'Descripción',array('class'=>'col-sm-2 control-label')) }}
                                     <div class="col-sm-10">
                                         {{ Form::textarea('descripcion',null,array('class'=>'form-control', 'type'=>'textarea')) }}
                                     </div>
                                 </div>
                                  <!-- aqui -->
                                 <div class="form-group">
-                                    {{ Form::label('enfermedadactual', 'Enfermedad Actual',array('class'=>'col-sm-2 control-label')) }}
+                                    {{ Form::label('enfermedadactual', 'Enfermedad actual',array('class'=>'col-sm-2 control-label')) }}
                                     <div class="col-sm-10">
                                         {{ Form::textarea('enfermedadactual',null,array('class'=>'form-control', 'type'=>'textarea')) }}
                                     </div>
                                 </div>
                                 <!-- aqui -->
                                 <div class="form-group">
-                                    {{ Form::label('medico', 'Medico',array('class'=>'col-sm-2 control-label')) }}
+                                    {{ Form::label('medico', 'Médico',array('class'=>'col-sm-2 control-label')) }}
                                     <div class="col-sm-8">
                                         <input type="hidden" class="form-control" value="{{$usuario->usuario_id}}" name="usuario" id="usuario" >
 
@@ -58,14 +60,14 @@
                                 ?>
 
                                 <div class="form-group">
-                                    {{ Form::label('fecha_registro', 'fecha_registro',array('class'=>'col-sm-2 control-label')) }}
+                                    {{ Form::label('fecha_registro', 'Fecha Registro',array('class'=>'col-sm-2 control-label')) }}
                                     <div class="col-sm-10">
                                         <input type="date" name="fecha_registro" value="{{$fecha[0]}}" id="fecha_registro" class="form-control" required>
                                     </div>
                                 </div>
                                
                                   <div class="form-group">
-                                    {{ Form::label('fecha_registro_hora', 'fecha_registro_hora',array('class'=>'col-sm-2 control-label')) }}
+                                    {{ Form::label('fecha_registro_hora', 'Hora',array('class'=>'col-sm-2 control-label')) }}
                                     <div class="col-sm-10">
                                         <input type="time" name="fecha_registro_hora" id="fecha_registro_hora" value="{{$hora[0]}}" class="form-control" required>
                                     </div>
