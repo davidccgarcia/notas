@@ -76,7 +76,7 @@ class ExamenIIController extends BaseController
         }
 
         $sistemas = Sistemas::tipos()->get();
-
+        
         return View::make('ExamenII::create')
             ->with('hcEvolucion', $evoluciones)
             ->with('sistemas', $sistemas);

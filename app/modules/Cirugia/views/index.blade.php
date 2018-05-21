@@ -1,5 +1,7 @@
 @extends('layouts.default')
 
+@section('title', 'Cirugías')
+
 @section('content')
 <br>
 <div  id="contenView">
@@ -7,13 +9,13 @@
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card border-sucess">
+                <div class="card-header bg-info text-white">
                     <i class="fa fa-hotel fa-fw" ></i> Cirugias
 
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
 
@@ -22,7 +24,7 @@
                               
                                 <hr>
                                 {{ Datatable::table()
-                                ->addColumn('Ingreso','Medico','Descripcion','Fecha Registro','Acciones')  
+                                ->addColumn('Ingreso','Médico','Descripción','Fecha registro','Acciones')  
                                 ->setUrl(route('cirugias.list',array($ingreso)))
                        
                                 ->render() }}

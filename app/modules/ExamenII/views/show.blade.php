@@ -1,8 +1,6 @@
 @extends('layouts.default')
 
-@section('title')
-    ProyectoX | Historial
-@stop
+@section('title', 'Examen Físico/Mental')
 
 @section('content')
 <br>
@@ -11,12 +9,12 @@
     <!-- /.row -->
     <div class="row">
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
-                    <i class="fa fa-stethoscope"></i> examenII Físico/Mental
+            <div class="card border-success">
+                <div class="card-header bg-info text-white">
+                    <i class="fa fa-stethoscope"></i> Examen Físico/Mental
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
 

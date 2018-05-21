@@ -47,7 +47,7 @@
                                 </div>
 
                                 <div class="form-group">
-                                    {{ Form::label('fecha_registro', 'Fecha Registro',array('class'=>'col-sm-2 control-label')) }}
+                                    {{ Form::label('fecha_registro', 'Fecha de registro',array('class'=>'col-sm-2 control-label')) }}
                                     <div class="col-sm-10">
                                         <input type="date" name="fecha_registro" placeholder="Fecha" id="fecha_registro" class="form-control" required>
                                     </div>

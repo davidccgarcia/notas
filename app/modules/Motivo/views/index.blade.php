@@ -25,7 +25,7 @@
                                 </br>
                                 <hr>
                                 {{ Datatable::table()
-                                ->addColumn('Ingreso','Medico','Descripcion','Fecha Registro','Acciones')  
+                                ->addColumn('Ingreso','Médico','Descripción','Fecha registro','Acciones')  
                                 
                                 ->setUrl(route('motivo.list',array($ingreso)))
                        

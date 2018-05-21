@@ -1,6 +1,6 @@
 @extends('layouts.default')
 
-@section('title', 'buscar')
+@section('title', 'Evoluciones')
 
 @section('content')
 <br>
@@ -30,7 +30,7 @@
                                 </br>
                                 <hr>
                                 {{ Datatable::table()
-                                ->addColumn('Ingreso','Medico','Descripcion','Fecha Registro','Acciones')  
+                                ->addColumn('Ingreso','Médico','Descripción','Fecha registro','Acciones')  
                                 ->setUrl(route('evoluciones.list',array($ingreso)))
                        
                                 ->render() }}

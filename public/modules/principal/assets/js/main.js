@@ -1,5 +1,4 @@
 function successFormExamen(result) {
-
     var alert = $('#alertMessage');
     var clases = 'alert alert-success alert-dismissible';
     var mensaje = result.mensaje;
@@ -67,7 +66,6 @@ var funciones = {
 $(document).ready(function() {
     var elementForm = document.getElementsByClassName('sw_normal');
     var longitud = elementForm.length;
-    //console.log(elementForm);
     
     var alert = $('#success-message');
     alert.addClass('hidden');
@@ -79,7 +77,6 @@ $(document).ready(function() {
         
         for (var i = 0; i < longitud; i++) {
             var element = $(elementForm[i]);
-
             if (element.is(':checked')) {
                 var objSwNomral = {
                     'tipo_sistema' : element.attr('tipo_sistema'),
@@ -89,7 +86,7 @@ $(document).ready(function() {
                 data.push(objSwNomral);
             }
         }
-        var url = '/examen';
+        var url = '/examenII';
        //console.log(data);
         
         funciones.ajax(data, url, successFormExamen, errorFormExamen);

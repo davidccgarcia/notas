@@ -1,8 +1,6 @@
 @extends('layouts.default')
 
-@section('title')
-    ProyectoX | examenII Físico
-@stop
+@section('title', 'Examen Físico')
 
 @section('content')
 <br>
@@ -11,35 +9,25 @@
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card border-success">
+                <div class="card-header bg-info text-white">
                     <i class="fa fa-stethoscope"></i> Buscar Evolucion
 
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
 
                         <div class="row" >
                             <div class="col-md-12">
                                 {{ Form::open(['route' => 'examenII.buscar', 'class' => 'form-horizontal', 'mehtod' => 'POST']) }}
-                                    <div class="form-group">
-                                        {{ Form::label('cuenta', 'Cuenta', ['class' => 'col-sm-2 control-label']) }}
-
-                                        <div class="col-sm-10">
-                                            {{ Form::number('cuenta', null, ['class' => 'form-control', 'id' => 'cuenta', 'placeholder' => 'Ingrese Cuenta', 'required' => true, 'min' => '0']) }}
-                                        </div>
-                                    </div>
-                                    <div class="form-group">
-                                        <div class="col-sm-offset-2 col-sm-10">
-                                            <button type="submit" class="btn btn-success"><i class="fa fa-search fa-fw"></i> BUSCAR</button>
-                                        </div>
-                                    </div>
+                                    <input type="number" min="1" id="cuenta" class="form-control search" placeholder="Ingrese cuenta" name="cuenta" required>
+                                    <button type="submit" class="btn btn-primary search-button"><i class="fa fa-search fa-fw"></i></button>
                                 {{ Form::close() }}
 
                             </div>
-
+                            <br><br><br
                             <div class="col-md-12">
                                 {{ Form::open(['route' => 'examenII.store', 'class' => 'form-horizontal', 'mehtod' => 'POST']) }}
 
@@ -50,7 +38,7 @@
 
                                     <table class="table table-striped">
                                         <thead>
-                                            <tr">
+                                            <tr>
                                                 <th class="text-center">Sistema</th>
                                                 <th class="text-center">Normal</th>
                                                 <th class="text-center">Anormal</th>
@@ -112,7 +100,7 @@
                                     </table>
                                     <div class="form-group">
                                         <div class="col-sm-12 text-right">
-                                            <button type="submit" class="btn btn-primary"><i class="fa fa-floppy-o"></i> GUARDAR</button>
+                                            <button type="submit" class="btn btn-warning btn-xs"> Guardar</button>
                                         </div>
                                     </div>
                                 {{ Form::close() }}
