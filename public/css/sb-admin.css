@@ -7,6 +7,19 @@ body {
   overflow-x: hidden;
 }
 
+.search {
+  padding: 10px;
+  float: left;
+  width: 92%;
+}
+
+.search-button {
+  float: left;
+  width: 8%;
+  padding: 10px;
+  cursor: pointer;
+}
+
 body.sticky-footer {
   margin-bottom: 56px;
 }
