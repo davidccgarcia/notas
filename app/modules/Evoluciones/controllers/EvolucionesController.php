@@ -156,9 +156,9 @@ class EvolucionesController extends \BaseController {
                 DB::connection('mysql')->table('logs')
                 ->insert($evolucions);
 
-            return \Illuminate\Support\Facades\Redirect::to('evoluciones?ingreso=' . $evolucion['ingreso'])->with('alert', 'La evolucion ha sido modificado correctamente');
+            return \Illuminate\Support\Facades\Redirect::to('evoluciones?ingreso=' . $evolucion['ingreso'])->with('alert', 'La evolución ha sido modificado correctamente');
         } else {
-            return \Illuminate\Support\Facades\Redirect::to('evoluciones?ingreso=' . $evolucion['ingreso'])->with('alert', 'La evolucion no se ha podido modificar');
+            return \Illuminate\Support\Facades\Redirect::to('evoluciones?ingreso=' . $evolucion['ingreso'])->with('alert', 'La evolución no se ha podido modificar');
         }
     }
 

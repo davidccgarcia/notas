@@ -23,67 +23,63 @@
                             <div class="col-md-12">
 
 
-
-                                {{ Form::model($evolucion, array('url'=>'evoluciones/'.$evolucion->hc_evolucion_descripcion_id,'method'=>'PATCH','class'=>'form-horizontal')) }}    
-                                <input type="hidden" class="form-control" value="{{$evolucion->ingreso}}" name="ingreso" id="ingreso" >
-
-                                <div class="form-group">
-                                    {{ Form::label('descripcion', 'Descripción',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        {{ Form::textarea('descripcion',null,array('class'=>'form-control', 'type'=>'textarea')) }}
-                                    </div>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('medico', 'Médico',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-8">
-                                        <input type="hidden" class="form-control" value="{{$usuario->usuario_id}}" name="usuario" id="usuario" >
-
-                                        {{ Form::text('medico',$usuario->nombre,array('class'=>'form-control','id'=>'usuario_text','readonly')) }}
-
-                                    </div>
-                                    <div class="col-sm-2">
-                                        <button  type="button" class="btn btn-info"  data-toggle="modal" data-target="#modalUsuario"  title="Buscar Medico"><i class="fa fa-search"></i></button>
-                                    </div>
-                                </div>
-                                <?php
+                                {{ Form::model($evolucion, ['url' => 'evoluciones/' .$evolucion->hc_evolucion_descripcion_id, 'method' => 'PATCH']) }}
                                 
-                                $fecha=  explode(" ", $evolucion->fecha_registro);
-                                $hora=  explode(".", $fecha[1])
-                                ?>
-
-                                <div class="form-group">
-                                    {{ Form::label('fecha_registro', 'Fecha de registro',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        <input type="date" name="fecha_registro" value="{{$fecha[0]}}" id="fecha_registro" class="form-control" required>
+                                    <input type="hidden" value="{{ $evolucion->ingreso }}" name="ingreso" id="ingreso">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            {{ Form::label('descripcion', 'Descripción') }}
+                                            {{ Form::textarea('descripcion', null, ['class' => 'form-control', 'type' => 'textarea']) }}
+                                        </div>
                                     </div>
-                                </div>
-                                  <div class="form-group">
-                                    {{ Form::label('fecha_registro_hora', 'Hora',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        <input type="time" name="fecha_registro_hora" id="fecha_registro_hora" value="{{$hora[0]}}" class="form-control" required>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                            <input type="hidden" value="{{ $usuario->usuario_id }}" name="usuario" id="usuario">
+                                            {{ Form::label('medico', 'Médico') }}
+                                            {{ Form::text('medico', $usuario->nombre, ['class' => 'form-control', 'id' => 'usuario_text', 'readonly']) }}
+                                        </div>
+                                        <div class="col-md-1 align-self-center" style="margin-bottom:-13px">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUsuario" title="Buscar médico">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                        <?php
+                                            $fecha = explode(' ', $evolucion->fecha_registro);
+                                            $hora = explode('.', $fecha[1]);
+                                        ?>
+                                        <div class="form-group col-md-4">
+                                            {{ Form::label('fecha_registro', 'Fecha de registro', ['class' => 'control-label']) }}
+                                            <input type="date" name="fecha_registro" value="{{ $fecha[0] }}" id="fecha_registro" class="form-control" required>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            {{ Form::label('fecha_registro_hora', 'Hora', ['class' => 'control-label']) }}
+                                            <input type="time" name="fecha_registro_hora" value="{{ $hora[0] }}" id="fecha_registro_hora" class="form-control" required>
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('sw_epicrisis', 'Epicrisis',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        <select name="sw_epicrisis" id="sw_epicrisis" class="form-control">
-                                            <option value="1" <?php echo ($evolucion->sw_epicrisis==1)?'selected':'' ?>>SI </option>
-                                            <option value="0"  <?php echo ($evolucion->sw_epicrisis==0)?'selected':'' ?>>NO</option>
-                                        </select>
+                                    <fieldset class="form-group">
+                                        <div class="row">
+                                            <legend class="col-form-label col-md-1 pt-0">Epicrisis</legend>
+                                            <div class="col-sm-10">
+                                                <div class="form-check">
+                                                    {{ Form::radio('sw_epicrisis', 1, $evolucion->sw_epicrisis == 1 ? true : false, ['class' => 'form-check-input', 'id' => 'si']) }}
+                                                    {{ Form::label('si', 'Si', ['class' => 'form-check-label']) }}
+                                                </div>
+                                                <div class="form-check">
+                                                    {{ Form::radio('sw_epicrisis', 0, $evolucion->sw_epicrisis == 1 ? true : false, ['class' => 'form-check-input', 'id' => 'no']) }}
+                                                    {{ Form::label('no', 'No', ['class' => 'form-check-label']) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-1">
+                                            {{ link_to('evoluciones?ingreso=' . $evolucion->ingreso, 'Volver', ['class'=>'btn btn-info btn-xs'] ) }}
+                                        </div>
+                                        <div class="form-group col-md-1">
+                                            <button type="submit" class="btn btn-warning btn-xs">Modificar</button>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        {{link_to('evoluciones?ingreso='.$evolucion->ingreso,'volver',array('class'=>'btn btn-info btn-xs'))}}
-                                        <button type="submit" class="btn btn-warning btn-xs">Modificar</button>
-                                    </div>
-                                </div>
-
-
-
-                                {{ Form::close() }}
-
+                                {{ Form::close() }}                                
 
                             </div
 
