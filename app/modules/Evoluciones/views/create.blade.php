@@ -18,65 +18,60 @@
                 <div class="card-body">
                     <div id="morris-area-chart">
 
-
                         <div class="row">
                             <div class="col-md-12">
-
-
-
-                                {{ Form::open( array('url'=>'evoluciones?ingreso='.$ingreso,'method'=>'post','class'=>'form-horizontal','id'=>'formCreate','name'=>'formCreate')) }}    
-                                <input type="hidden" class="form-control" value="{{$ingreso}}" name="ingreso" id="ingreso" >
-
-                                <div class="form-group">
-                                    {{ Form::label('descripcion', 'Descripción',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        {{ Form::textarea('descripcion',null,array('class'=>'form-control','id'=>'descripcion', 'type'=>'textarea')) }}
+                                {{ Form::open(['url' => 'evoluciones?ingreso=' . $ingreso, 'method' => 'post']) }}
+                                
+                                    <input type="hidden" value="{{ $ingreso }}" name="ingreso" id="ingreso">
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            {{ Form::label('descripcion', 'Descripción') }}
+                                            {{ Form::textarea('descripcion', null, ['class' => 'form-control', 'type' => 'textarea']) }}
+                                        </div>
                                     </div>
-                                </div>
-                                <div class="form-group">
-                                    {{ Form::label('medico', 'Médico',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-8">
-                                        <input type="hidden" class="form-control" value="" required name="usuario" id="usuario" >
-
-                                        {{ Form::text('medico',null,array('class'=>'form-control','id'=>'usuario_text','disabled','required')) }}
-
+                                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                            <input type="hidden" value="" name="usuario" id="usuario">
+                                            {{ Form::label('medico', 'Médico') }}
+                                            {{ Form::text('medico', null , ['class' => 'form-control', 'id' => 'usuario_text', 'readonly']) }}
+                                        </div>
+                                        <div class="col-md-1 align-self-center" style="margin-bottom:-13px">
+                                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalUsuario" title="Buscar médico">
+                                                <i class="fa fa-search"></i>
+                                            </button>
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            {{ Form::label('fecha_registro', 'Fecha de registro', ['class' => 'control-label']) }}
+                                            <input type="date" name="fecha_registro" id="fecha_registro" class="form-control" required>
+                                        </div>
+                                        <div class="form-group col-md-2">
+                                            {{ Form::label('fecha_registro_hora', 'Hora', ['class' => 'control-label']) }}
+                                            <input type="time" name="fecha_registro_hora" id="fecha_registro_hora" class="form-control" required>
+                                        </div>
                                     </div>
-                                    <div class="col-sm-2">
-                                        <button  type="button" class="btn btn-info"  data-toggle="modal" data-target="#modalUsuario"  title="Buscar Medico"><i class="fa fa-search"></i></button>
+                                    <fieldset class="form-group">
+                                        <div class="row">
+                                            <legend class="col-form-label col-md-2 pt-0">Epicrisis</legend>
+                                            <div class="col-sm-10">
+                                                <div class="form-check">
+                                                    {{ Form::radio('sw_epicrisis', 1, false, ['class' => 'form-check-input', 'id' => 'si']) }}
+                                                    {{ Form::label('si', 'Si', ['class' => 'form-check-label']) }}
+                                                </div>
+                                                <div class="form-check">
+                                                    {{ Form::radio('sw_epicrisis', 0, false, ['class' => 'form-check-input', 'id' => 'no']) }}
+                                                    {{ Form::label('no', 'No', ['class' => 'form-check-label']) }}
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="form-row">
+                                        <div class="form-group col-md-1">
+                                            {{ link_to('evoluciones?ingreso=' . $ingreso, 'Volver', ['class'=>'btn btn-info btn-xs'] ) }}
+                                        </div>
+                                        <div class="form-group col-md-1">
+                                            <button type="submit" onclick="enviar_formulario()" class="btn btn-warning btn-xs">Guardar</button>
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    {{ Form::label('fecha_registro', 'Fecha de registro',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        <input type="date" name="fecha_registro" placeholder="Fecha" id="fecha_registro" class="form-control" required>
-                                    </div>
-                                </div>
-                                  <div class="form-group">
-                                    {{ Form::label('fecha_registro_hora', 'Hora',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        <input type="time" name="fecha_registro_hora" placeholder="Hora Registro" id="fecha_registro_hora"  max="23:59" min="00:00" class="form-control" required>
-                                    </div>
-                                </div>
-                              <div class="form-group">
-                                    {{ Form::label('sw_epicrisis', 'Epicrisis',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        <select name="sw_epicrisis" id="sw_epicrisis" class="form-control">
-                                            <option value="1">SI</option>
-                                            <option value="0">NO</option>
-                                        </select>
-                                    </div>
-                                </div>
-                             
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        {{link_to('evoluciones?ingreso='.$ingreso,'volver',array('class'=>'btn btn-info btn-xs'))}}
-                                        <button type="button" onclick="enviar_formulario()" class="btn btn-warning btn-xs">Guardar</button>
-                                    </div>
-                                </div>
-
-
-
                                 {{ Form::close() }}
 
 

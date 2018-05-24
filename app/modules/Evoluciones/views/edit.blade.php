@@ -21,8 +21,7 @@
 
                         <div class="row">
                             <div class="col-md-12">
-
-
+                                
                                 {{ Form::model($evolucion, ['url' => 'evoluciones/' .$evolucion->hc_evolucion_descripcion_id, 'method' => 'PATCH']) }}
                                 
                                     <input type="hidden" value="{{ $evolucion->ingreso }}" name="ingreso" id="ingreso">
@@ -58,7 +57,7 @@
                                     </div>
                                     <fieldset class="form-group">
                                         <div class="row">
-                                            <legend class="col-form-label col-md-1 pt-0">Epicrisis</legend>
+                                            <legend class="col-form-label col-md-2 pt-0">Epicrisis</legend>
                                             <div class="col-sm-10">
                                                 <div class="form-check">
                                                     {{ Form::radio('sw_epicrisis', 1, $evolucion->sw_epicrisis == 1 ? true : false, ['class' => 'form-check-input', 'id' => 'si']) }}
@@ -79,7 +78,7 @@
                                             <button type="submit" class="btn btn-warning btn-xs">Modificar</button>
                                         </div>
                                     </div>
-                                {{ Form::close() }}                                
+                                {{ Form::close() }}
 
                             </div
 
