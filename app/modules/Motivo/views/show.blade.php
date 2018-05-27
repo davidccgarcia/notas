@@ -21,50 +21,31 @@
 
                         <div class="row">
                             <div class="col-md-12">
-                                {{ Form::model($evolucion, array('class'=>'form-horizontal')) }}    
+                                {{ Form::model($evolucion) }}    
 
-
-                                <div class="form-group">
-                                    {{ Form::label('descripcion', 'Descripción',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        {{ Form::textarea('descripcion',null,array('class'=>'form-control', 'type'=>'textarea')) }}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-12">
+                                            {{ Form::label('descripcion', 'Descripción') }}
+                                            {{ Form::textarea('descripcion', null, ['class' => 'form-control', 'type' => 'textarea']) }}
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- aqui -->
-                                <div class="form-group">
-                                    {{ Form::label('enfermedadactual', 'Enfermedad actual',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        {{ Form::textarea('enfermedadactual',null,array('class'=>'form-control', 'type'=>'textarea')) }}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-5">
+                                            {{ Form::label('medico', 'Médico') }}
+                                            {{ Form::text('medico', $usuario->nombre, ['class' => 'form-control', 'id' => 'usuario_text', 'readonly']) }}
+                                        </div>
+                                        <div class="form-group col-md-4">
+                                            {{ Form::label('fecha_registro', 'Fecha de registro', ['class' => 'control-label']) }}
+                                            {{ Form::text('fecha_registro', null, ['class' => 'form-control', 'type' => "text"]) }}
+                                        </div>
                                     </div>
-                                </div>
-                                <!-- aqui -->
-                                <div class="form-group">
-                                    {{ Form::label('medico', 'Médico',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        {{ Form::text('medico',$usuario->nombre,array('class'=>'form-control')) }}
+                                    <div class="form-row">
+                                        <div class="form-group col-md-1">
+                                            {{ link_to('motivo?ingreso=' . $evolucion->ingreso, 'Volver', ['class'=>'btn btn-info btn-xs'] ) }}
+                                        </div>
                                     </div>
-                                </div>
-
-                                <div class="form-group">
-                                    {{ Form::label('fecha_registro', 'Fecha de registro',array('class'=>'col-sm-2 control-label')) }}
-                                    <div class="col-sm-10">
-                                        {{ Form::text('fecha_registro',null,array('class'=>'form-control', 'type'=>'date')) }}
-                                    </div>
-                                </div>
-                                
-                                <div class="form-group">
-                                    <div class="col-sm-offset-2 col-sm-10">
-                                        {{link_to('motivo?ingreso='.$evolucion->ingreso,'volver',array('class'=>'btn btn-info btn-xs'))}}
-                                    </div>
-                                </div>
-
-
-
-
                                 {{ Form::close() }}
-
-
-                            </div
+                            </div>
 
                         </div>
 
