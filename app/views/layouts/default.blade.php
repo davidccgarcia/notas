@@ -43,9 +43,15 @@
               </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Examen Físico">
-              <a class="nav-link" href="{{ url('examenII') }}">
+              <a class="nav-link" href="{{ url('examen') }}">
                 <i class="fa fa-stethoscope"></i>
                 <span class="nav-link-text">Examen Físico</span>
+              </a>
+            </li>
+            <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Examen Físico">
+              <a class="nav-link" href="{{ url('examenII') }}">
+                <i class="fa fa-stethoscope"></i>
+                <span class="nav-link-text">Examen Físico v2</span>
               </a>
             </li>
             <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Cirugía">

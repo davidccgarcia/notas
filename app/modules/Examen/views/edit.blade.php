@@ -7,19 +7,19 @@
     <!-- /.row -->
     <div class="row" >
         <div class="col-lg-12">
-            <div class="panel panel-default">
-                <div class="panel-heading">
+            <div class="card border-success">
+                <div class="card-header bg-info text-white">
                     <i class="fa fa-stethoscope" ></i> Editar Examen Físico
                 </div>
                 <!-- /.panel-heading -->
-                <div class="panel-body">
+                <div class="card-body">
                     <div id="morris-area-chart">
 
-                        {{ Form::open(['route' => ['examen.update', $examen->ingreso], 'method' => 'POST', 'class' => 'form-horizontal']) }}
-                            <div class="form-group">
-                                {{ Form::label('hallazgo', 'Hallazgo', ['class' => 'col-sm-2 control-label']) }}
-                                <div class="col-sm-10">
-                                    {{ Form::textarea('hallazgo', $examen->hallazgo, ['class' => 'form-control', 'id' => 'hallazgo']) }}                                    
+                        {{ Form::open(['route' => ['examen.update', $examen->ingreso], 'method' => 'POST']) }}
+                            <div class="form-row">
+                                <div class="form-group col-md-12">
+                                    {{ Form::label('hallazgo', 'Hallazgo') }}
+                                    {{ Form::textarea('hallazgo', $examen->hallazgo, ['class' => 'form-control', 'id' => 'hallazgo', 'type' => 'textarea']) }}
                                 </div>
                             </div>
                             <div class="form-group">

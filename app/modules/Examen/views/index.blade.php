@@ -29,6 +29,7 @@
                                             {{ Form::hidden('cuenta', Input::get('cuenta')) }}
                                             {{ Form::submit('Crear | Editar Examen Físico', ['class' => 'btn btn-primary']) }}
                                         {{ Form::close() }}
+                                        <br>
                                     @endif
                                 </div>
                                 <div class="col-md-12">
