@@ -39,12 +39,6 @@
                                                 <th class="text-center">Anormal</th>
                                                 <th class="text-center">Hallazgo</th>
                                             </tr>
-                                            <tr class="info">
-                                                <th></th>
-                                                <th class="text-center">{{ Form::radio('todos', 'N', false, ['id' => 'selected']) }}</th>
-                                                <th class="text-center">{{ Form::radio('todos', 'A', false, ['id' => 'unselected']) }}</th>
-                                                <th></th>
-                                            </tr>
                                         </thead>
                                         <tbody>
                                         @foreach ($evolucion as $sistema)

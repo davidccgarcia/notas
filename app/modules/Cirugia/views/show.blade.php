@@ -39,21 +39,6 @@
                                             {{ Form::text('fecha_registro', null, ['class' => 'form-control', 'type' => "text"]) }}
                                         </div>
                                     </div>
-                                    <fieldset class="form-group">
-                                        <div class="row">
-                                            <legend class="col-form-label col-md-2 pt-0">Epicrisis</legend>
-                                            <div class="col-sm-10">
-                                                <div class="form-check">
-                                                    {{ Form::radio('sw_epicrisis', 1, $evolucion->sw_epicrisis == 1 ? true : false, ['class' => 'form-check-input', 'id' => 'si']) }}
-                                                    {{ Form::label('si', 'Si', ['class' => 'form-check-label']) }}
-                                                </div>
-                                                <div class="form-check">
-                                                    {{ Form::radio('sw_epicrisis', 0, $evolucion->sw_epicrisis == 1 ? true : false, ['class' => 'form-check-input', 'id' => 'no']) }}
-                                                    {{ Form::label('no', 'No', ['class' => 'form-check-label']) }}
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </fieldset>
                                     <div class="form-row">
                                         <div class="form-group col-md-1">
                                             {{ link_to('cirugias?ingreso=' . $evolucion->ingreso, 'Volver', ['class'=>'btn btn-info btn-xs'] ) }}
